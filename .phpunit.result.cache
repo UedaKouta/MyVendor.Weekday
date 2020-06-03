@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":179:{a:2:{s:7:"defects";a:0:{}s:5:"times";a:2:{s:52:"MyVendor\Weekday\Resource\App\WeekdayTest::testOnGet";d:0.258;s:51:"MyVendor\Weekday\Resource\Page\IndexTest::testOnGet";d:0.045;}}}
