@@ -3,6 +3,7 @@ namespace MyVendor\Weekday\Resource\App;
 
 use BEAR\Resource\ResourceObject;
 use MyVendor\Weekday\MyLoggerInterface;
+use MyVendor\Weekday\Annotation\BenchMark;
 
 class Weekday extends ResourceObject
 {
