@@ -38,7 +38,7 @@ class AppModule extends AbstractAppModule
             $this->matcher->annotatedWith(BenchMark::class), // @BenchMarkとアノテートされているメソッドに
             [BenchMarker::class]                             // BenchMarkerインターセプターを適用
         );
-//DB モジュールインストール        
+//DB モジュールインストール
         $dbConfig = [
             'driver' => 'Cake\Database\Driver\Sqlite',
             'database' => $appDir . '/var/db/todo.sqlite3'
