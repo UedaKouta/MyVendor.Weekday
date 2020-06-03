@@ -3,19 +3,26 @@ namespace MyVendor\Weekday\Module;
 
 use BEAR\Package\AbstractAppModule;
 use BEAR\Package\PackageModule;
-use josegonzalez\Dotenv\Loader;
+use BEAR\Package\Provide\Router\AuraRouterModule; // add this line
 
 class AppModule extends AbstractAppModule
 {
     /**
      * {@inheritdoc}
      */
-    protected function configure() : void
+    protected function configure()
     {
-        $env = dirname(__DIR__) . '/.env';
+        $appDir = $this->appMeta->appDir;
+        $env = dirname(__DIR__) . '/env.php';
         if (file_exists($env)) {
-            (new Loader($env))->parse()->putenv(true);
+            require_once $appDir . '/env.php';
         }
+        // $env = dirname(__DIR__) . '/.env';
+        // if (file_exists($env)) {
+        //     (new Loader($env))->parse()->putenv(true);
+        // }
+
+        $this->install(new AuraRouterModule($appDir . '/var/conf/aura.route.php')); // add this line
         $this->install(new PackageModule);
     }
 }
